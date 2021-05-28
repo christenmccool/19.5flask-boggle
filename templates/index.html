@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Boggle</title>
+</head>
+<body>
+
+    <h1>Boggle</h1>
+
+    <div id="game">
+        <h2 id="score">Score: 0</h2>
+        
+        <div id="start-btn">
+            <div id="start-btn-text">
+                Start game
+            </div>
+        </div>
+
+        <table>
+            {% for y in range(5) %}
+            <tr>
+                {% for x in range(5) %}
+                <td>{{board[y][x]}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div id="game-info">
+        
+        <div id="guess-form">
+            <form action="">
+                <input type="text" name="guess" id="guess" autocomplete="off" required>
+                <button id="guess-btn">Submit guess</button>
+            </form>
+        </div>
+    
+        <h3 id="timer"></h2>
+
+        <h2 id="message"></h2>
+    </div>
+
+    <div id="end">
+        <h2>Game over!</h2>
+
+        <div id="user-info">
+        </div>
+
+        <form action="">
+            <button id="restart-btn">New board</button>
+        </form>
+
+    </div>
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
